@@ -6,6 +6,8 @@ import pathlib
 
 # set this to your token (open naviki.org, login, copy the value of the Authorization header in the browser dev tools)
 oauth_token = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
+if oauth_token.startswith("Bearer "):
+    oauth_token = oauth_token[7:]
 # (optional) select which routes to export
 route_types = "routedAll,recordedMy,recordedOthers"
 # GPX files will be saved in this directory
